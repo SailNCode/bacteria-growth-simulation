@@ -21,6 +21,9 @@ public class UserInterface {
                 options,
                 options[0]
         );
+        if (selectedOption == -1) {
+            System.exit(0);
+        }
         switch (selectedOption) {
             case 0:
                 Locale.setDefault(new Locale("pl"));
@@ -35,14 +38,17 @@ public class UserInterface {
         do {
             try {
                 //"Input number of bacteria in range [1,10]"
-                nBacteria = Integer.parseInt((String) JOptionPane.showInputDialog(null,
+                String input = (String) JOptionPane.showInputDialog(null,
                         bundle.getString("nBacteriaInput"),
                         bundle.getString("GAME_TITLE"),
                         JOptionPane.QUESTION_MESSAGE,
                         bacteriaIcon,
                         null,
-                        "10"));
-                //nBacteria = Integer.parseInt(JOptionPane.showInputDialog("Input number of bacteria in range [1,10]", ));
+                        "10");
+                if (input == null) {
+                    System.exit(0);
+                }
+                nBacteria = Integer.parseInt(input);
             } catch (NumberFormatException e) {}
         } while (nBacteria < 1 || nBacteria > BacteriumGenerator.getNColors());
         //Getting number of bacteria types from user:
@@ -61,7 +67,7 @@ public class UserInterface {
                         null,
                         exemplaryTypeInput);
                 if (input == null)
-                    continue;
+                    System.exit(0);
                 splitInput = input.split(",");
                 if (splitInput.length != BacteriumType.values().length)
                     continue;

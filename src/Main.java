@@ -65,7 +65,6 @@ public class Main {
                       .collect(Collectors.joining("\n")),
                       Bundle.get().getString("RANKING"),
                       JOptionPane.INFORMATION_MESSAGE
-
               )
       );
     });

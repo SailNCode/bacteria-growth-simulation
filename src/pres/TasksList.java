@@ -79,8 +79,7 @@ class TaskPanel extends JPanel {
             JButton startButton = new JButton(bundle.getString("START"));
             startButton.addActionListener(event -> {
                 if (futureTask.getState() == BacteriumState.UNBORN) {
-                    System.out.println(executorService.submit(futureTask));
-                    System.out.println(futureTask);
+                    executorService.submit(futureTask);
                 }
 
             });
@@ -89,7 +88,7 @@ class TaskPanel extends JPanel {
             JButton cancelButton = new JButton(bundle.getString("CANCEL"));
             cancelButton.addActionListener(event -> {
                 if (!futureTask.isCancelled() && futureTask.getState() != BacteriumState.UNBORN) {
-                    System.out.println("Could be cancelled: " + futureTask.cancel(true));
+                    futureTask.cancel(true);
                 }
             });
         startCancelPanel.add(cancelButton);

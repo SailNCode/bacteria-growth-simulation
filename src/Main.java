@@ -24,8 +24,6 @@ public class Main {
   private static final Color boardColor = Color.BLACK;
   private static final String iconPath = "src/zad1/images/bacteriaIcon.jpg";
   private static final String bundlePath = "Messages";
-
-
   public static void main(String[] args) {
     PetriTableModel petriTableModel = new PetriTableModel(sideNCells, boardColor);
     BacteriumGenerator.loadTableModel(petriTableModel);

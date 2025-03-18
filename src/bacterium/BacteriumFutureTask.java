@@ -24,9 +24,6 @@ public class BacteriumFutureTask extends FutureTask<Integer> {
             return BacteriumState.DIED_PEACEFULLY;
         return null;
     }
-    public void say(String message) {
-        System.out.printf("[%s]: %s%n", name, message);
-    }
     public String getName() {
         return name;
     }

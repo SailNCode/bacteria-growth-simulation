@@ -17,7 +17,7 @@ public class UserInterface {
                 "Language Selection",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE,
-                null,
+                bacteriaIcon,
                 options,
                 options[0]
         );

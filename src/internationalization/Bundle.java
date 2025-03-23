@@ -6,7 +6,7 @@ public class Bundle {
     private static ResourceBundle BUNDLE = null;
 
     public static void setup(String baseName) {
-        BUNDLE = ResourceBundle.getBundle("Messages");
+        BUNDLE = ResourceBundle.getBundle("resources.config.Messages");
     }
     public static ResourceBundle get() {
         if (BUNDLE == null)

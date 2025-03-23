@@ -22,12 +22,12 @@ import java.util.stream.Collectors;
 public class Main {
   private static final int sideNCells = 40;
   private static final Color boardColor = Color.BLACK;
-  private static final String iconPath = "src/zad1/images/bacteriaIcon.jpg";
+  private static final String iconFileName = "bacteriaIcon.jpg";
   private static final String bundlePath = "Messages";
   public static void main(String[] args) {
     PetriTableModel petriTableModel = new PetriTableModel(sideNCells, boardColor);
     BacteriumGenerator.loadTableModel(petriTableModel);
-    ImageIcon bacteriaIcon = new ImageIcon(iconPath);
+    ImageIcon bacteriaIcon = new ImageIcon(ImageLoader.loadImage(iconFileName));;
     //Creating bacteria:
     List<Bacterium> bacteria = UserInterface.promptForBacteria(bundlePath, bacteriaIcon);
 

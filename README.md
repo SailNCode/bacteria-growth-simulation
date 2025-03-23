@@ -35,17 +35,32 @@
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](resources/images/screenshot.png)
 
 
 ## Setup
-1. **Clone the repository**:
+1. **Clone the repository and change directory**
    ```bash
    git clone https://github.com/SailNCode/bacteria-growth-simulation.git
+   
    cd bacteria-growth-simulation
    ```
-2. Open the project in IDE and run
-
+2. **Compile .java files into bin/**
+   ```bash
+   javac -d bin src/*.java  src/bacterium/*.java src/internationalization/*.java src/pres/*.java
+   ```
+3. **Copy contents of resources/ into bin/**
+   ```bash
+   cp -r resources bin/
+   ```
+4. **Create .jar**
+   ```bash
+   jar cfm Bacteria.jar manifest.txt -C bin .
+   ```
+5. **Run the application:**
+   ```bash
+   java -jar Bacteria.jar
+   ```
 
 ## Project Status
 Project is: _complete_

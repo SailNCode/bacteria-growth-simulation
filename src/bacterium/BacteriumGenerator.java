@@ -32,9 +32,6 @@ public class BacteriumGenerator {
         else
             return new Bacterium(colorName, color, petriTableModel, bacteriumType);
     }
-    public static Bacterium generateBacterium() {
-        return generateBacterium(null);
-    }
     public static void loadTableModel(PetriTableModel petriTableModel) {
         BacteriumGenerator.petriTableModel = petriTableModel;
     }

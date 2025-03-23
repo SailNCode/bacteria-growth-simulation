@@ -22,7 +22,7 @@ public class BacteriumFutureTask extends FutureTask<Integer> {
             return BacteriumState.KILLED;
         if (isDone() && !isCancelled())
             return BacteriumState.DIED_PEACEFULLY;
-        return null;
+        throw new IllegalArgumentException("Unknown type!");
     }
     public String getName() {
         return name;

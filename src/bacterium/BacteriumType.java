@@ -1,11 +1,11 @@
 package bacterium;
 
 import internationalization.Bundle;
-import internationalization.TranslatableEnum;
+import internationalization.Translatable;
 
 import java.util.Arrays;
 
-public enum BacteriumType implements TranslatableEnum {
+public enum BacteriumType implements Translatable {
     CHILL(1), ORDINARY(2), AGGRESSIVE(3), DEMON(5);
     private final int speedFactor;
     BacteriumType(int speedFactor) {
@@ -22,4 +22,8 @@ public enum BacteriumType implements TranslatableEnum {
                 .toArray(String[]::new);
     }
 
+    @Override
+    public String translate() {
+        return Bundle.get().getString(this.toString());
+    }
 }

@@ -1,16 +1,13 @@
 package bacterium;
 
 import internationalization.Bundle;
-import internationalization.TranslatableEnum;
+import internationalization.Translatable;
 
-import java.util.Arrays;
-
-public enum BacteriumState implements TranslatableEnum {
+public enum BacteriumState implements Translatable {
     UNBORN, ALIVE, KILLED, DIED_PEACEFULLY;
-    public static String[] translateAll() {
-        return Arrays.stream(BacteriumState.values())
-                .map(BacteriumState::toString)
-                .map(n -> Bundle.get().getString(n))
-                .toArray(String[]::new);
+
+    @Override
+    public String translate() {
+        return Bundle.get().getString(this.toString());
     }
 }

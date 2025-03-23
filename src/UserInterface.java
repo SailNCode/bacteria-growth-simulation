@@ -26,7 +26,7 @@ public class UserInterface {
         }
         switch (selectedOption) {
             case 0:
-                Locale.setDefault(new Locale("pl"));
+                Locale.setDefault(Locale.forLanguageTag("pl"));
                 break;
             default:
                 Locale.setDefault(Locale.ENGLISH);
